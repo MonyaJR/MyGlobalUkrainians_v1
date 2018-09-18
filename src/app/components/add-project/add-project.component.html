@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="card card-body">
+    <h2 class="card-title text-primary">Додати новий проект</h2>
+    <form #form="ngForm" (ngSubmit)="addProject()">
+      <div class="form-group">
+        <label for="name">Назва проекту</label>
+        <input type="text"
+               class="form-control"
+               name="name"
+               [(ngModel)]="project.name"
+               id="name"
+               #projectName="ngModel"
+               required
+        >
+      </div>
+      <div class="form-group">
+        <label for="description">Опис проекту</label>
+        <textarea type="text"
+                  class="form-control"
+                  name="description"
+                  [(ngModel)]="project.description"
+                  id="description"
+                  #projectDescription="ngModel"
+                  required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="categories">Категорія</label>
+        <select
+          #categories="ngModel"
+          [ngModel] = "project.category"
+          name="categories"
+          id="categories"
+          (change)="changeCategory($event)"
+          class="form-control"
+          required
+        >
+          <option value="">Виберіть категорію</option>
+          <option *ngFor="let c of cat" [value]="c.name">{{c.name}}</option>
+        </select>
+      </div>
+      <button class="btn btn-primary mt-3">Зберегти</button>
+    </form>
+  </div>
+</div>

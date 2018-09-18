@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark global-bg">
+  <a class="navbar-brand" routerLink="/">Global Ukraine</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav ml-auto" *ngIf="isLogin">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Головна</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/all-categories" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Проекти</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/all-services" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Послуги</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/ngo" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">NGO's</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/news" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Новини</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/brands" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Бренди</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/ivents" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Івенти</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Про нас</a>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link btn btn-danger" *ngIf="isLogin" (click)="logout()">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,26 @@
+.login-wrap{
+  width: 100%;
+  background-image: url("../../../assets/img/bg-home.jpeg");
+}
+.login-wrap .login-left-img{
+  width: 100%;
+}
+.login-wrap .login-left-text{
+  color: #fff;
+}
+.login-card{
+  box-shadow: 1px 3px 7px 1px rgba(0,0,0,.3);
+  border-radius: 10px;
+  transition: all .3s linear;
+}
+.login-card:hover{
+  transform: scale(1.1);
+  box-shadow: 4px 5px 7px 1px rgba(0,0,0,.3);
+}
+.login-left-card{
+  background: #366082;
+  box-shadow: 1px 3px 7px 1px rgba(0,0,0,.3);
+}
+.global-bg{
+  background: #366082;
+}

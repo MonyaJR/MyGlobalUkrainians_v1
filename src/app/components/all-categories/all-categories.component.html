@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let cat of categories">
+      <a routerLink='/all-projects'>
+        <div class="card card-body">
+          <img class="w-100" src="assets/img/2.jpg">
+          <h3 class="card-title text-center">{{cat.name}}</h3>
+          <!--<span class="text-left">Опис проекту</span>-->
+          <p class="card-text text-justify"> {{cat.description}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!--/row-->
+</div>

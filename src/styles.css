@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+/*===== Default Style Start =====*/
+a{
+  text-decoration: none;
+  color: #000 !important;
+}
+a:hover{
+  text-decoration: none !important;
+  color: #000 !important;
+}
+/*===== Change Bootstrap Card-Title Hover Start =====*/
+.card.card-body:hover .card-title{
+  color: #93ceff !important;
+}
+/*===== Change Bootstrap Card-Title Hover End =====*/
+/*===== Default Style End =====*/
+/*===== Custom Style Start =====*/
+/*===== Menu Start =====*/
+.navbar.navbar-expand-lg.navbar-dark.global-bg a{
+  color: #fff !important;
+}
+.navbar.navbar-expand-lg.navbar-dark.global-bg a:hover{
+  color: #93ceff !important;
+}
+/*===== Menu End =====*/
+
+/*===== Custom Style End =====*/
