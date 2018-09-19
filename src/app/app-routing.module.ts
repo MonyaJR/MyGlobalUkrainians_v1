@@ -14,10 +14,12 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
 import {HomepageComponent} from './components/homepage/homepage.component';
 import {AuthGuard} from './services/auth.guard.service';
 import {AllCategoriesComponent} from './components/all-categories/all-categories.component';
+import {CategoryComponent} from './components/category/category.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'homepage', component: HomepageComponent, canActivate: [AuthGuard]},
+  // {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', component: HomepageComponent, canActivate: [AuthGuard]},
+  {path: 'category/:id', component: CategoryComponent, canActivate: [AuthGuard]},
   {path: 'all-categories', component: AllCategoriesComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -27,7 +29,7 @@ const routes: Routes = [
   {path: 'projects/:id', component: AddProjectComponent, canActivate: [AuthGuard]},
   {path: 'all-projects', component: AllProjectsComponent, canActivate: [AuthGuard]},
   {path: 'all-services', component: AllServicesComponent, canActivate: [AuthGuard]},
-  {path: '**', component: NotFoundComponent}
+  // {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

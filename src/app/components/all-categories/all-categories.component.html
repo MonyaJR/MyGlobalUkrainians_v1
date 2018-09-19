@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let cat of categories">
-      <a routerLink='/all-projects'>
+      <a
+        routerLink='/all-categories'
+        [queryParams]="{category: cat.id}"
+      >
         <div class="card card-body">
           <img class="w-100" src="assets/img/2.jpg">
           <h3 class="card-title text-center">{{cat.name}}</h3>
@@ -9,6 +12,21 @@
           <p class="card-text text-justify"> {{cat.description}}</p>
         </div>
       </a>
+    </div>
+  </div>
+  <!--/row-->
+  <div class="row" *ngIf="!searchText">
+    <div class="col-md-4" *ngFor="let project of projects">
+      <div class="card card-body">
+        <img class="w-100" src="assets/img/2.jpg" alt="">
+        <h3 class="card-title text-center">{{project.name}}</h3>
+        <span class="text-left font-weight-bold">Категорія проекту</span>
+        <p class="card-text text-justify"> {{project.category}}</p>
+        <span class="text-left font-weight-bold">Опис проекту</span>
+        <p class="card-text text-justify"> {{project.description}}</p>
+        <button class="btn btn-danger mt-3" (click)="deleteProject(project.id)">Delete</button>
+        <a class="btn btn-primary mt-1" routerLink="/projects/{{project.id}}">Edit</a>
+      </div>
     </div>
   </div>
   <!--/row-->

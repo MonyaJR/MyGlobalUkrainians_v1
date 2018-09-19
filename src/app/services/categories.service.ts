@@ -10,6 +10,8 @@ export class CategoriesService {
   categories: Observable<Categories[]>;
   category: Observable<Categories>;
 
+  catName: string;
+
   constructor(
     private afs: AngularFirestore
   ) {
@@ -27,6 +29,14 @@ export class CategoriesService {
     });
 
     return this.categories;
+  }
+
+  getCategoriesName(value) {
+      this.catName = value;
+  }
+
+  setCatName() {
+    return this.catName;
   }
 
 }

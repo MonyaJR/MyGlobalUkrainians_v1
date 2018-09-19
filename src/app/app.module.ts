@@ -29,6 +29,8 @@ import { CustomDatePipe } from './pipes/custom-date.pipe';
 import { AllCategoriesComponent } from './components/all-categories/all-categories.component';
 import {CategoriesService} from './services/categories.service';
 import {AngularFireDatabase} from 'angularfire2/database';
+import { CategoryComponent } from './components/category/category.component';
+import {DataServiceService} from './services/data-service.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import {AngularFireDatabase} from 'angularfire2/database';
     RegisterComponent,
     HomepageComponent,
     CustomDatePipe,
-    AllCategoriesComponent
+    AllCategoriesComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [ProjectsService, IdService, AuthService, ServicesService, AuthGuard, CategoriesService, AngularFireDatabase],
+  providers: [ProjectsService, IdService, AuthService, ServicesService, AuthGuard, CategoriesService, AngularFireDatabase, DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

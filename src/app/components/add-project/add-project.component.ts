@@ -48,7 +48,6 @@ export class AddProjectComponent implements OnInit {
   changeCategory(event) {
     // this.selectedCategory = event.target.value;
     this.project.category = event.target.value;
-    console.log(this.project.category);
   }
 
 }

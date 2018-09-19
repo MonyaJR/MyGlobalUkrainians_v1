@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     // Check auth state
     this.authService.checkAuth().subscribe(auth => {
       if (auth) {
-        this.router.navigate(['homepage']);
+        this.router.navigate(['/']);
       }
     });
   }
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.authService.login(this.email, this.password)
       .then(user => {
-        this.router.navigate(['/homepage']);
+        this.router.navigate(['/']);
       })
       .catch(err => {
         console.log(err);

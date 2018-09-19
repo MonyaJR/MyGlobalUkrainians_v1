@@ -1,0 +1,51 @@
+<section class="mt-3">
+  <div class="container">
+    <div class=" row controls d-flex align-items-center mb-3">
+      <div class="col-md-2">
+        <a routerLink="/add-project" class="btn btn-primary">Додати новий проект</a>
+      </div>
+      <!--/col-md-2-->
+      <div class="col-md-4">
+        <input type="text"
+               class="form-control ml-2"
+               name="searchCat"
+               [(ngModel)]="searchCat"
+               placeholder="Пошук проектів"
+               (keyup)="searchCategories()"
+        >
+      </div>
+      <!--/col-md-4-->
+    </div>
+    <!--/controls-->
+  </div>
+  <!--/container-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let c of browseCategory">
+          <div class="card card-body">
+            <img class="w-100" src="assets/img/2.jpg" alt="">
+            <h3 class="card-title text-center">{{c.name}}</h3>
+            <span class="text-left font-weight-bold">Категорія проекту</span>
+            <p class="card-text text-justify"> {{c.category}}</p>
+            <span class="text-left font-weight-bold">Опис проекту</span>
+            <p class="card-text text-justify"> {{c.description}}</p>
+          </div>
+      </div>
+    </div>
+    <!--/row-->
+    <!--/Searching Result-->
+    <div class="row" *ngIf="searchCat">
+      <div class="alert alert-info col-6 mx-auto" *ngIf="searchCat && !searchingCategories.length">Проектів не знайдено</div>
+      <div class="col-md-4" *ngFor="let p of searchingCategories">
+          <div class="card card-body">
+            <img class="w-100" src="assets/img/2.jpg" alt="">
+            <h3 class="card-title text-center">{{p.name}}</h3>
+            <span class="text-left font-weight-bold">Категорія проекту</span>
+            <p class="card-text text-justify"> {{p.category}}</p>
+            <span class="text-left font-weight-bold">Опис проекту</span>
+            <p class="card-text text-justify"> {{p.description}}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

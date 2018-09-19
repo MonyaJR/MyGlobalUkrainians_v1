@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
     // Check auth state
     this.authService.checkAuth().subscribe(auth => {
       if (auth) {
-        this.router.navigate(['homepage']);
+        this.router.navigate(['/']);
         console.log(auth);
       }
     });
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.authService.register(this.email, this.password)
       .then(user => {
-        return this.router.navigate(['/homepage']);
+        return this.router.navigate(['/']);
       })
       .catch(err => {
         console.log(err);

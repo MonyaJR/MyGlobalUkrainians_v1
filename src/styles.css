@@ -16,6 +16,11 @@ a:hover{
 /*===== Change Bootstrap Card-Title Hover End =====*/
 /*===== Default Style End =====*/
 /*===== Custom Style Start =====*/
+/*===== Project Section Start =====*/
+.shadow-project {
+  box-shadow: 6px 7px 15px 2px rgba(0,0,0,.3);
+}
+/*===== Project Section End =====*/
 /*===== Menu Start =====*/
 .navbar.navbar-expand-lg.navbar-dark.global-bg a{
   color: #fff !important;
