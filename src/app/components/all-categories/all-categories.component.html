@@ -15,7 +15,7 @@
     </div>
   </div>
   <!--/row-->
-  <div class="row" *ngIf="!searchText">
+  <div class="row" >
     <div class="col-md-4" *ngFor="let project of projects">
       <div class="card card-body">
         <img class="w-100" src="assets/img/2.jpg" alt="">
@@ -24,8 +24,6 @@
         <p class="card-text text-justify"> {{project.category}}</p>
         <span class="text-left font-weight-bold">Опис проекту</span>
         <p class="card-text text-justify"> {{project.description}}</p>
-        <button class="btn btn-danger mt-3" (click)="deleteProject(project.id)">Delete</button>
-        <a class="btn btn-primary mt-1" routerLink="/projects/{{project.id}}">Edit</a>
       </div>
     </div>
   </div>
