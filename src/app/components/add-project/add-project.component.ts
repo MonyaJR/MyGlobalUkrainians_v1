@@ -19,7 +19,8 @@ export class AddProjectComponent implements OnInit {
     // user: '',
     description: '',
     category: '',
-    date: null
+    date: null,
+    link: ''
   };
 
   constructor(

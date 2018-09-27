@@ -5,4 +5,5 @@ export interface Project {
   description: string;
   category: string;
   date?: number;
+  link: string;
 }
