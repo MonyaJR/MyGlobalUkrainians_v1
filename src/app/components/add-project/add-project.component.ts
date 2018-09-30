@@ -3,8 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectsService} from '../../services/projects.service';
 import { Project} from '../../models/project';
 import { IdService } from '../../services/id.service';
-import {Categories} from '../../models/categories';
-import {CategoriesService} from '../../services/categories.service';
+import { Categories } from '../../models/categories';
+import { CategoriesService } from '../../services/categories.service';
+import { Countries } from '../../models/countries';
+import { CountriesService } from '../../services/countries.service';
 
 @Component({
   selector: 'app-add-project',
@@ -13,12 +15,13 @@ import {CategoriesService} from '../../services/categories.service';
 })
 export class AddProjectComponent implements OnInit {
   cat: Categories[];
-  selectedCategory: string = '';
+  country: Countries[];
   project: Project = {
     name: '',
     // user: '',
     description: '',
     category: '',
+    country: '',
     date: null,
     link: ''
   };
@@ -26,6 +29,7 @@ export class AddProjectComponent implements OnInit {
   constructor(
     public categoriesService: CategoriesService,
     public projectsService: ProjectsService,
+    public countryService: CountriesService,
     public activatedRoute: ActivatedRoute,
     public router: Router,
     public idService: IdService
@@ -34,8 +38,10 @@ export class AddProjectComponent implements OnInit {
   ngOnInit() {
     this.project.id = this.idService.generate();
     this.project.date = Date.now();
-  //  get all category
+    //  get all category
     this.categoriesService.getCategories().subscribe((cat: Categories[]) => this.cat = cat);
+    // get all country
+    this.countryService.getCountry().subscribe((country: Countries[]) => this.country = country);
   }
 
   addProject() {
@@ -46,9 +52,16 @@ export class AddProjectComponent implements OnInit {
     });
   }
 
+  closeProject() {
+    this.router.navigate(['/all-projects']);
+  }
+
   changeCategory(event) {
-    // this.selectedCategory = event.target.value;
     this.project.category = event.target.value;
+  }
+
+  changeCountry(event) {
+    this.project.country = event.target.value;
   }
 
 }

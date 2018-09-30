@@ -31,6 +31,7 @@ import {CategoriesService} from './services/categories.service';
 import {AngularFireDatabase} from 'angularfire2/database';
 import { CategoryComponent } from './components/category/category.component';
 import {DataServiceService} from './services/data-service.service';
+import {CountriesService} from './services/countries.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import {DataServiceService} from './services/data-service.service';
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [ProjectsService, IdService, AuthService, ServicesService, AuthGuard, CategoriesService, AngularFireDatabase, DataServiceService],
+  providers: [ProjectsService, IdService, AuthService, ServicesService, AuthGuard, CategoriesService, AngularFireDatabase, DataServiceService, CountriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

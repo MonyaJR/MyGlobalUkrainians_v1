@@ -33,6 +33,25 @@
             </div>
           </div>
           <div class="form-group">
+            <label for="country">Країна</label>
+            <select
+              ngModel
+              class="form-control"
+              name="country"
+              id="country"
+              ([ngModel])="project.country"
+              #countryName="ngModel"
+              (change)="changeCountry($event)"
+              required
+            >
+              <option value="">Виберіть країну</option>
+              <option *ngFor="let contryItem of country" [value]="contryItem.id">{{contryItem.name}}</option>
+              <div class="alert alert-danger" *ngIf="countryName.touched && countryName.invalid">
+                Це поле обов'язкове.
+              </div>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="name">Посилання проекту</label>
             <input type="text"
                    class="form-control"
@@ -64,6 +83,7 @@
             </div>
           </div>
           <button class="btn btn-primary mt-3" [disabled]="projectName.invalid || projectDescription.invalid || projectLink.invalid || categories.invalid">Зберегти</button>
+          <button class="btn btn-danger mt-3" (click)="closeProject()">Закрити</button>
         </form>
       </div>
     </div>

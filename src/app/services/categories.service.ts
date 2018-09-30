@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Categories } from '../models/categories';
+import { Countries } from '../models/countries';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
@@ -9,8 +10,6 @@ export class CategoriesService {
   categoryDoc: AngularFirestoreDocument<Categories>;
   categories: Observable<Categories[]>;
   category: Observable<Categories>;
-
-  catName: string;
 
   constructor(
     private afs: AngularFirestore
@@ -31,12 +30,5 @@ export class CategoriesService {
     return this.categories;
   }
 
-  getCategoriesName(value) {
-      this.catName = value;
-  }
-
-  setCatName() {
-    return this.catName;
-  }
 
 }
