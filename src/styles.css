@@ -47,5 +47,10 @@ a:hover{
   color: #93ceff !important;
 }
 /*===== Menu End =====*/
+/*===== HomePage Map Start =====*/
+g polygon {
+  cursor: pointer;
+}
+/*===== HomePage Map End =====*/
 
 /*===== Custom Style End =====*/

@@ -16,6 +16,7 @@ export class AllProjectsComponent implements OnInit {
   categories: Categories[];
   browseCategory: Project[] = [];
   searchingResult: Project[] = [];
+  searchingMapProject: Project[] = [];
   searchText: string;
   userName: string;
   category: string;
@@ -58,6 +59,13 @@ export class AllProjectsComponent implements OnInit {
 
   deleteProject(id: string) {
     if (confirm('Ви дійсно хочете видалити категорію?')) this.projectService.deleteProject(id);
+  }
+
+  mapProject(country) {
+
+    this.searchingMapProject = this.projects.filter(project => project.country.indexOf(country) !== -1);
+    console.log(country);
+
   }
 
 }
