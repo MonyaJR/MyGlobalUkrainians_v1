@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import { Project } from '../../models/project';
 import {ProjectsService} from '../../services/projects.service';
+import * as SvgPanZoom from 'svg-pan-zoom';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit, AfterViewInit {
+
   projects: Project[];
   searchingMapProject: Project[] = [];
 
@@ -31,4 +33,26 @@ export class HomepageComponent implements OnInit {
 
   }
 
+  ngAfterViewInit() {
+
+    const svgPanZoom: SvgPanZoom.Instance = SvgPanZoom('#homeMap', {
+
+      viewportSelector: '.svg-pan-zoom_viewport',
+      panEnabled: true,
+      controlIconsEnabled: true,
+      zoomEnabled: false,
+      dblClickZoomEnabled: true,
+      mouseWheelZoomEnabled: true,
+      preventMouseEventsDefault: true,
+      zoomScaleSensitivity: 0.2,
+      minZoom: 0.5,
+      maxZoom: 10,
+      fit: true,
+      contain: true,
+      center: true,
+      refreshRate: 'auto'
+
+    });
+
+  }
 }

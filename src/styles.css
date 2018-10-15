@@ -51,6 +51,9 @@ a:hover{
 g polygon {
   cursor: pointer;
 }
+svg {
+  background-color: rgba(0, 134, 253,.1);
+}
 /*===== HomePage Map End =====*/
 
 /*===== Custom Style End =====*/
