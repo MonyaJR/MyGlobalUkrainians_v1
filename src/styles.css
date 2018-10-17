@@ -48,11 +48,16 @@ a:hover{
 }
 /*===== Menu End =====*/
 /*===== HomePage Map Start =====*/
-g polygon {
-  cursor: pointer;
-}
 svg {
   background-color: rgba(0, 134, 253,.1);
+}
+#homeMap {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1px;
+  cursor: pointer;
+  /*stroke-dasharray: 10;*/
+  /*stroke-linejoin: round;*/
 }
 /*===== HomePage Map End =====*/
 
